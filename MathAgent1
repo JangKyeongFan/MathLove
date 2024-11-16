@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수학 학습 에이전트 1호</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.10.9/lucide.min.js"></script>
+    <style>
+        /* 상단 메뉴 스타일 */
+        #topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            background-color: #ffffff;
+            padding: 10px;
+            border-bottom: 1px solid #CCCCCC;
+            width: 100%;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+        .sidebar-btn {
+            margin: 0 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        /* 하단 링크 스타일 */
+        #chatbot-link {
+            margin-top: 20px;
+            display: none;
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #CCCCCC;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        #chatbot-link a {
+            color: #007BFF;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        #chatbot-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div id="mainPage">
+            <!-- 상단 메뉴 바 -->
+            <div id="topbar">
+                <h2>메뉴</h2>
+                <button class="sidebar-btn" data-page="home">홈</button>
+                <button class="sidebar-btn" data-page="chat" id="agentChatBtn">에이전트와 소통하기</button>
+                <button class="sidebar-btn" data-page="private">내 교과서</button>
+                <button class="sidebar-btn" data-page="shared">함께보는 교과서</button>
+                <button class="sidebar-btn" data-page="history">역사</button>
+                <button id="loginBtn">로그인</button>
+                <button id="signupBtn" class="reset-button">회원가입</button>
+                <div class="model-select-container">
+                    <span class="model-select-label">모델 선택</span>
+                    <select id="modelSelect" class="model-select">
+                        <option value="gpt-4o">gpt-4o</option>
+                        <option value="gpt-4o-mini">gpt-4o-mini</option>
+                        <option value="gemini-1.5-pro-002">Gemini 1.5 Pro</option>
+                        <option value="gemini-1.5-flash-002">Gemini 1.5 Flash</option>
+                        <option value="claude-3-5-sonnet-20240620">Claude 3.5 Sonnet</option>
+                        <option value="claude-3-opus-20240229">Claude 3 Opus</option>
+                        <option value="claude-3-haiku-20240307">Claude 3 Haiku</option>
+                    </select>
+                </div>
+                <div class="creator-info">문의는 홍길동에게 메세지 남겨주세요</div>
+            </div>
+            
+            <!-- 컨텐츠 영역 -->
+            <div id="content" class="main-content">
+                <h2>수학 학습 에이전트 1호</h2>
+                <p>수학 학습을 도와주는 최고의 에이전트입니다!</p>
+
+                <!-- 하단 챗봇 링크 -->
+                <div id="chatbot-link">
+                    <p>
+                        <a href="https://chatgpt.com/g/g-Aj3ZoYje5-suhagceheom-maseuteo-jayeongwahaggyoyugweon" target="_blank">수학체험 마스터 (자연과학교육원) 챗봇으로 이동하기</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // "에이전트와 소통하기" 버튼 클릭 이벤트
+        document.getElementById("agentChatBtn").addEventListener("click", function() {
+            const chatbotLink = document.getElementById("chatbot-link");
+            chatbotLink.style.display = "block"; // 하단 링크를 표시
+        });
+    </script>
+    
+</body>
+</html>
